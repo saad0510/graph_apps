@@ -1,17 +1,17 @@
 name: ui_demo
 description: A new Flutter project.
 publish_to: 'none' 
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
+  cupertino_icons: ^1.0.8
+
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  syncfusion_flutter_charts: ^20.3.49
-  responsive_framework: ^0.2.0
+  syncfusion_flutter_charts: ^25.2.6
 
 dev_dependencies:
   flutter_test:

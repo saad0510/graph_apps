@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_wrapper.dart';
 
 import 'auth_web.dart';
 import 'crypto_app.dart';
@@ -17,16 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (context, child) => ResponsiveWrapper.builder(
-        child,
-        minWidth: 400,
-        defaultScale: !kIsWeb,
-        background: Container(color: const Color(0xFFF5F5F5)),
-      ),
+    return const MaterialApp(
       title: 'Ui Demo App',
       debugShowCheckedModeBanner: false,
-      home: kIsWeb ? const WebDemos() : const CryptoApp(),
+      home: kIsWeb ? WebDemos() : CryptoApp(),
     );
   }
 }
@@ -40,11 +33,16 @@ class WebDemos extends StatelessWidget {
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(),
             const Text(
-              "Select a web",
+              "Select",
               style: TextStyle(fontSize: 28),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              "Zoom out for best experience",
+              style: TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 30),
             TextButton(
@@ -94,7 +92,7 @@ class WebDemos extends StatelessWidget {
                 style: TextStyle(fontSize: 36),
               ),
             ),
-            const Spacer(),
+            const SizedBox(height: 30),
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(
@@ -102,8 +100,8 @@ class WebDemos extends StatelessWidget {
                 );
               },
               child: const Text(
-                "App",
-                style: TextStyle(fontSize: 12),
+                "Crypto App",
+                style: TextStyle(fontSize: 36),
               ),
             ),
           ],

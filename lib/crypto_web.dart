@@ -67,36 +67,36 @@ class CryptoWeb extends StatelessWidget {
           color: Colors.transparent,
         ),
         textTheme: const TextTheme(
-          headline1: TextStyle(
+          displayLarge: TextStyle(
             fontSize: 24,
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
-          headline2: TextStyle(
+          displayMedium: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
-          headline6: TextStyle(
+          titleLarge: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
-          subtitle1: TextStyle(
+          titleMedium: TextStyle(
             fontSize: 13,
             color: Colors.grey,
           ),
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 15,
           ),
         ),
       ),
       child: Builder(
         builder: (context) {
-          return Scaffold(
+          return const Scaffold(
             body: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: const [
+                children: [
                   Sidebar(),
                   Expanded(
                     child: SingleChildScrollView(child: MainBody()),
@@ -138,11 +138,11 @@ class Sidebar extends StatelessWidget {
             ),
             title: Text(
               "\$250,004.70",
-              style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.normal),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.normal),
             ),
             subtitle: Text(
               "Business Accouny",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           const Spacer(),
@@ -159,7 +159,7 @@ class Sidebar extends StatelessWidget {
           const Spacer(),
           Text(
             "Mortgage",
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 15),
           const NavBar(
@@ -213,7 +213,7 @@ class _NavBarState extends State<NavBar> {
               leading: Icon(widget.icons[i], color: Colors.white),
               title: Text(
                 widget.titles[i],
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               trailing: SizedBox(
                 width: 60,
@@ -242,9 +242,9 @@ class MainBody extends StatelessWidget {
         color: const Color(0xff101213),
         borderRadius: BorderRadius.circular(25),
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           MyAppBar(),
           SizedBox(height: 20),
           CryptoHeader(),
@@ -271,9 +271,9 @@ class MyCredits extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children: [
         CreditsCard(),
         CreditsCard(),
         CreditsCard(),
@@ -299,7 +299,7 @@ class CreditsCard extends StatelessWidget {
                 children: [
                   Text(
                     "Amount",
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const CoinTile(title: "8092.45 FTT", subtitle: "\$303,000.00"),
                 ],
@@ -311,7 +311,7 @@ class CreditsCard extends StatelessWidget {
                 children: [
                   Text(
                     "Status",
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const ListTile(
                     horizontalTitleGap: 10,
@@ -340,11 +340,11 @@ class MyLoans extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Column(
-          children: const [
+          children: [
             LoanTableHeader(),
             Divider(height: 10),
             LoanTableEntry(
@@ -404,25 +404,25 @@ class LoanTableHeader extends StatelessWidget {
           Expanded(
             child: Text(
               "Amount",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           Expanded(
             child: Text(
               "Collateral",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           Expanded(
             child: Text(
               "Status",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           Expanded(
             child: Text(
               "Interest",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           const Spacer(),
@@ -521,7 +521,7 @@ class LoanTitle extends StatelessWidget {
       children: [
         Text(
           "My loans",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(width: 5),
         const CircleAvatar(
@@ -543,7 +543,7 @@ class LoanTitle extends StatelessWidget {
         const SizedBox(width: 10),
         Text(
           "In progress",
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ],
     );
@@ -559,12 +559,12 @@ class CreditTitle extends StatelessWidget {
       children: [
         Text(
           "My credit lines",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const Spacer(),
         Text(
           "Show more",
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(color: blueColor),
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: blueColor),
         ),
       ],
     );
@@ -584,7 +584,7 @@ class CryptoHeader extends StatelessWidget {
           children: [
             Text(
               "Cyrpto loans & mortage",
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             ElevatedButton(
               onPressed: () {},
@@ -595,7 +595,7 @@ class CryptoHeader extends StatelessWidget {
         const SizedBox(height: 5),
         Text(
           "Borrow USDT, Ethereum, or USDC with three simple steps",
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ],
     );
@@ -615,7 +615,7 @@ class MyAppBar extends StatelessWidget {
         TextButton(
           child: Text(
             "Docs",
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           onPressed: () {},
         ),
@@ -623,14 +623,14 @@ class MyAppBar extends StatelessWidget {
           label: const Icon(Icons.keyboard_arrow_down),
           icon: Text(
             "Company",
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           onPressed: () {},
         ),
         TextButton(
           child: Text(
             "Smartcredit token",
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           onPressed: () {},
         ),
@@ -671,11 +671,11 @@ class Report extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         child: Row(
-          children: const [
+          children: [
             Expanded(
               child: MonthlyReport(),
             ),
@@ -699,17 +699,17 @@ class MonthlyReport extends StatelessWidget {
       children: [
         Text(
           "Monthly Report",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 5),
         Text(
           "Feb 1,2021 - Mar 1, 2022",
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 40),
         RichText(
           text: TextSpan(
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
             children: const [
               TextSpan(text: "My profit:  "),
               TextSpan(
@@ -725,12 +725,12 @@ class MonthlyReport extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           "\$42,760.85",
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
         const SizedBox(height: 10),
         RichText(
           text: TextSpan(
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
             children: const [
               TextSpan(text: "Increase increased "),
               TextSpan(
@@ -760,14 +760,14 @@ class ReportStats extends StatelessWidget {
       children: [
         Text(
           "Statistics",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 5),
         Row(
           children: [
             Text(
               "62%",
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             const SizedBox(width: 15),
             Chip(
@@ -784,15 +784,15 @@ class ReportStats extends StatelessWidget {
           child: SfCartesianChart(
             margin: const EdgeInsets.only(top: 30, right: 30),
             plotAreaBorderWidth: 0,
-            primaryXAxis: DateTimeAxis(isVisible: false),
-            primaryYAxis: NumericAxis(
+            primaryXAxis: const DateTimeAxis(isVisible: false),
+            primaryYAxis: const NumericAxis(
               borderWidth: 0,
               maximum: 60,
               decimalPlaces: 0,
               minimum: 20,
               desiredIntervals: 3,
               interval: 20,
-              axisLine: const AxisLine(width: 0),
+              axisLine: AxisLine(width: 0),
             ),
             trackballBehavior: TrackballBehavior(
               activationMode: ActivationMode.singleTap,
@@ -813,7 +813,7 @@ class ReportStats extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
-                isVisible: true,
+                initialIsVisible: true,
                 animationDuration: 3000,
                 dataSource: graphData,
                 xValueMapper: (_, i) => DateTime(2021, i),

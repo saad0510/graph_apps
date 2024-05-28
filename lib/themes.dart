@@ -28,29 +28,29 @@ class AppThemes {
       visualDensity: VisualDensity.compact,
     ),
     textTheme: const TextTheme(
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
         fontSize: 36,
         color: Colors.white,
         fontWeight: FontWeight.w500,
       ),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.normal,
       ),
-      bodyText1: TextStyle(
+      bodyLarge: TextStyle(
         fontSize: 13,
         fontWeight: FontWeight.w500,
         color: Color(0xFFBDBEC2),
       ),
-      subtitle1: TextStyle(
+      titleMedium: TextStyle(
         fontSize: 11,
         color: Colors.white,
       ),
-      subtitle2: TextStyle(
+      titleSmall: TextStyle(
         fontSize: 12,
         color: Colors.grey,
       ),
@@ -94,22 +94,22 @@ class AppThemes {
       ),
     ),
     textTheme: const TextTheme(
-      headline1: TextStyle(
+      displayLarge: TextStyle(
         fontSize: 40,
         color: Colors.white,
         fontWeight: FontWeight.w600,
       ),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
         fontSize: 18,
         color: Color(0xFF9AA5B5),
         fontWeight: FontWeight.normal,
       ),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
         fontSize: 14,
         color: Color(0xFF9AA5B5),
         fontWeight: FontWeight.w600,
       ),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w600,
       ),
@@ -118,30 +118,30 @@ class AppThemes {
 
   static final dashBoardWeb = ThemeData(
     textTheme: const TextTheme(
-      headline2: TextStyle(
+      displayMedium: TextStyle(
         fontSize: 44,
         fontWeight: FontWeight.bold,
         color: Color(0xFF2b234d),
       ),
-      bodyText1: TextStyle(
+      bodyLarge: TextStyle(
         fontSize: 16,
         color: Colors.grey,
       ),
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
         fontSize: 16,
         color: Color(0xFF2b234d),
       ),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
         fontSize: 26,
         fontWeight: FontWeight.w900,
         color: Color(0xFF2b234d),
       ),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w900,
         color: Color(0xFF2b234d),
       ),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w900,
         color: Color(0xFF2b234d),
@@ -185,27 +185,27 @@ class AppThemes {
       prefixIconColor: Colors.deepPurple.shade100,
     ),
     textTheme: TextTheme(
-      headline1: const TextStyle(
+      displayLarge: const TextStyle(
         fontSize: 32,
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
-      headline5: const TextStyle(
+      headlineSmall: const TextStyle(
         fontSize: 18,
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
-      headline6: const TextStyle(
+      titleLarge: const TextStyle(
         fontSize: 16,
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
-      bodyText1: const TextStyle(
+      bodyLarge: const TextStyle(
         fontSize: 14,
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
-      subtitle2: TextStyle(
+      titleSmall: TextStyle(
         fontSize: 12,
         color: Colors.deepPurple.shade100,
       ),

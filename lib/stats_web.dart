@@ -132,12 +132,12 @@ class StatsWeb extends StatelessWidget {
       data: AppThemes.statsWeb,
       child: Builder(
         builder: (context) {
-          return Scaffold(
+          return const Scaffold(
             body: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: const [
+                children: [
                   Sidebar(),
                   InfoBody(),
                   Expanded(child: GraphBody()),
@@ -156,11 +156,11 @@ class GraphBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           SearchBar(),
           SizedBox(height: 30),
           Graph(),
@@ -197,7 +197,7 @@ class _TradeListState extends State<TradeList> {
         child: Theme(
           data: Theme.of(context).copyWith(
             textTheme: TextTheme(
-              subtitle2: TextStyle(
+              titleSmall: TextStyle(
                 color: selected == i ? Colors.white : primaryLightColor,
               ),
             ),
@@ -213,23 +213,23 @@ class _TradeListState extends State<TradeList> {
                     children: [
                       Text(
                         "${data[i].date.day}.${data[i].date.month}.${data[i].date.year}",
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                       Text(
                         "${data[i].high}",
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                       Text(
                         "${data[i].low}",
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                       Text(
                         "${data[i].open}",
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                       Text(
                         "${data[i].close}",
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                       const Icon(Icons.dialpad),
                     ],
@@ -266,7 +266,7 @@ class TradeHeader extends StatelessWidget {
         const SizedBox(width: 10),
         Text(
           "Last 521 trades",
-          style: Theme.of(context).textTheme.subtitle2,
+          style: Theme.of(context).textTheme.titleSmall,
         )
       ],
     );
@@ -292,8 +292,8 @@ class Graph extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(20, 30, 30, 50),
             plotAreaBorderWidth: 0,
             borderWidth: 0,
-            primaryXAxis: NumericAxis(isVisible: false),
-            primaryYAxis: NumericAxis(isVisible: false),
+            primaryXAxis: const NumericAxis(isVisible: false),
+            primaryYAxis: const NumericAxis(isVisible: false),
             series: [
               ColumnSeries(
                 animationDuration: 2000,
@@ -308,17 +308,17 @@ class Graph extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(20, 30, 30, 20),
             plotAreaBorderWidth: 0,
             borderWidth: 0,
-            primaryXAxis: DateTimeCategoryAxis(
-              axisLine: const AxisLine(width: 0),
-              majorGridLines: const MajorGridLines(width: 0),
+            primaryXAxis: const DateTimeCategoryAxis(
+              axisLine: AxisLine(width: 0),
+              majorGridLines: MajorGridLines(width: 0),
             ),
-            primaryYAxis: NumericAxis(
+            primaryYAxis: const NumericAxis(
               decimalPlaces: 1,
               minimum: 15,
               maximum: 40,
               desiredIntervals: 6,
-              axisLine: const AxisLine(width: 0),
-              majorGridLines: const MajorGridLines(width: 0),
+              axisLine: AxisLine(width: 0),
+              majorGridLines: MajorGridLines(width: 0),
             ),
             trackballBehavior: TrackballBehavior(
               enable: true,
@@ -383,7 +383,7 @@ class SearchBar extends StatelessWidget {
           ),
           label: Text(
             "Switch to ETH",
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
         ),
         const Spacer(),
@@ -401,8 +401,8 @@ class Sidebar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         CircleAvatar(
           radius: 15,
           backgroundColor: blueColor,
@@ -544,12 +544,12 @@ class Footer extends StatelessWidget {
               children: [
                 Text(
                   "Score",
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const SizedBox(height: 10),
                 Text(
                   "97",
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
               ],
             ),
@@ -561,7 +561,7 @@ class Footer extends StatelessWidget {
           children: [
             Text(
               "Community Trust",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const Spacer(flex: 3),
             const Icon(
@@ -571,12 +571,12 @@ class Footer extends StatelessWidget {
             ),
             Text(
               "88%",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const Spacer(),
             Text(
               "25 VOTES",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
           ],
         ),
@@ -618,7 +618,7 @@ class PiChart extends StatelessWidget {
         borderWidth: 0,
         series: <CircularSeries>[
           PieSeries<int, int>(
-            dataSource: [25, 25, 25, 25, 25],
+            dataSource: const [25, 25, 25, 25, 25],
             xValueMapper: (d, _) => d,
             yValueMapper: (_, i) => i,
           )
@@ -663,7 +663,7 @@ class InfoGrid extends StatelessWidget {
       children: [
         Text(
           "\$ 983.47520",
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
         const SizedBox(height: 5),
         Row(
@@ -676,12 +676,12 @@ class InfoGrid extends StatelessWidget {
             const SizedBox(width: 5),
             Text(
               "0.2498488",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const Spacer(),
             Text(
               "24H: +5.74",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const SizedBox(width: 5),
             const Icon(
@@ -756,12 +756,12 @@ class InfoCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: Theme.of(context).textTheme.subtitle2,
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               const SizedBox(height: 8),
               Text(
                 subtitle,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
           ),
@@ -787,7 +787,7 @@ class Header extends StatelessWidget {
           title: const Text("BSCS/Cake"),
           subtitle: Text(
             "PancakeSwap pair token 0X24rA...4f21Td",
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
           trailing: MyCard(
             child: IconButton(

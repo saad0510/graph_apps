@@ -160,7 +160,7 @@ class Dashboard extends StatelessWidget {
           children: [
             Text(
               "Dashboard",
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.displayMedium,
             ),
             const SizedBox(height: 20),
             const DashboardTags(),
@@ -185,7 +185,7 @@ class GraphLabels extends StatelessWidget {
       children: days
           .map((e) => Text(
                 e,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ))
           .toList(),
     );
@@ -203,14 +203,14 @@ class Graph extends StatelessWidget {
     return SfCartesianChart(
       margin: const EdgeInsets.symmetric(vertical: 40, horizontal: 0),
       plotAreaBorderWidth: 0,
-      primaryXAxis: CategoryAxis(isVisible: false),
-      primaryYAxis: NumericAxis(
+      primaryXAxis: const CategoryAxis(isVisible: false),
+      primaryYAxis: const NumericAxis(
         borderWidth: 0,
         labelsExtent: 0,
         maximum: 4,
         minimum: 1,
         desiredIntervals: 3,
-        axisLine: const AxisLine(width: 0),
+        axisLine: AxisLine(width: 0),
       ),
       series: [
         SplineAreaSeries<num, num>(
@@ -223,6 +223,7 @@ class Graph extends StatelessWidget {
           gradient: const LinearGradient(
             colors: [Colors.transparent, Colors.transparent],
           ),
+          initialIsVisible: true,
           animationDuration: 3000,
           dataSource: line1,
           xValueMapper: (_, i) => i,
@@ -242,6 +243,7 @@ class Graph extends StatelessWidget {
           gradient: const LinearGradient(
             colors: [Colors.transparent, Colors.transparent],
           ),
+          initialIsVisible: true,
           animationDuration: 3000,
           dataSource: line2,
           xValueMapper: (_, i) => i,
@@ -265,7 +267,7 @@ class GraphTitle extends StatelessWidget {
           children: [
             Text(
               "Portfilio visitors",
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             const Spacer(),
             TextButton.icon(
@@ -276,7 +278,7 @@ class GraphTitle extends StatelessWidget {
               ),
               icon: Text(
                 "This week",
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
           ],
@@ -292,7 +294,7 @@ class GraphTitle extends StatelessWidget {
             const SizedBox(width: 5),
             Text(
               "Website",
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             const SizedBox(width: 50),
             const Icon(
@@ -303,7 +305,7 @@ class GraphTitle extends StatelessWidget {
             const SizedBox(width: 5),
             Text(
               "Others",
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
           ],
         ),
@@ -317,8 +319,8 @@ class DashboardTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: const [
+    return const Wrap(
+      children: [
         Tag(
           icon: Icon(Icons.group_outlined),
           text: "Clients",
@@ -376,7 +378,7 @@ class Tag extends StatelessWidget {
             const SizedBox(width: 30),
             Text(
               subtext,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
         ),
@@ -403,14 +405,14 @@ class CalenderSideBar extends StatelessWidget {
         children: [
           Text(
             "Calender",
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           const SizedBox(height: 15),
           const Calender(),
           const SizedBox(height: 30),
           Text(
             "Schedule",
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           const SizedBox(height: 20),
           const Expanded(
@@ -448,7 +450,7 @@ class _CalenderState extends State<Calender> {
               return Center(
                 child: Text(
                   days[i],
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               );
             }
@@ -526,14 +528,14 @@ class ScheduleCard extends StatelessWidget {
             const SizedBox(width: 10),
             Text(
               subtitle,
-              style: Theme.of(context).textTheme.subtitle2?.copyWith(color: Colors.grey),
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
             ),
           ],
         ),
         const SizedBox(height: 15),
         Text(
           title,
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(height: 15),
         Wrap(
@@ -569,9 +571,9 @@ class ScheduleAttachment extends StatelessWidget {
         color: Colors.deepPurpleAccent,
         borderRadius: BorderRadius.circular(25),
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             "Wireframe, concept, & references.pdf",
             style: TextStyle(

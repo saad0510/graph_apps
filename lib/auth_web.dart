@@ -15,11 +15,11 @@ class AuthWeb extends StatelessWidget {
         builder: (context) {
           final preHeading = Text(
             "START FOR FREE",
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headlineSmall,
           );
           final heading = RichText(
             text: TextSpan(
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
               children: const [
                 TextSpan(text: "Create new account"),
                 TextSpan(
@@ -31,7 +31,7 @@ class AuthWeb extends StatelessWidget {
           );
           final postHeading = RichText(
             text: TextSpan(
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
               children: const [
                 TextSpan(text: "Already a member?"),
                 TextSpan(
@@ -96,11 +96,11 @@ class FormFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
-          children: const [
+          children: [
             SizedBox(
               width: 160,
               child: TextField(
@@ -122,8 +122,8 @@ class FormFields extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 15),
-        const SizedBox(
+        SizedBox(height: 15),
+        SizedBox(
           width: 350,
           child: TextField(
             decoration: InputDecoration(
@@ -132,8 +132,8 @@ class FormFields extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 15),
-        const SizedBox(
+        SizedBox(height: 15),
+        SizedBox(
           width: 350,
           child: TextField(
             decoration: InputDecoration(
@@ -196,7 +196,7 @@ class MyAppBar extends StatelessWidget {
         const SizedBox(width: 10),
         RichText(
           text: TextSpan(
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
             children: const [
               TextSpan(text: "Anywhere app"),
               TextSpan(text: ".", style: TextStyle(color: accentColor)),
@@ -206,12 +206,12 @@ class MyAppBar extends StatelessWidget {
         const SizedBox(width: 50),
         Text(
           "Home",
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(width: 50),
         Text(
           "Join",
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
       ],
     );

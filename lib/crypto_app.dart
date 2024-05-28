@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -8,74 +10,81 @@ class CryptoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dw = MediaQuery.sizeOf(context).width;
+
     return Theme(
       data: AppThemes.cryptoApp,
       child: Builder(
         builder: (context) {
-          return Scaffold(
-            appBar: myAppBar,
-            body: ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              children: [
-                const SizedBox(height: 20),
-                Text(
-                  "Current Wallet Balance",
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  "\$3,293.46",
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                const SizedBox(height: 5),
-                const MyDropDown(),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          return Center(
+            child: SizedBox(
+              width: min(400, dw),
+              child: Scaffold(
+                appBar: myAppBar,
+                body: ListView(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   children: [
-                    Column(
-                      children: const [
-                        CircularIcon(icon: Icon(Icons.ios_share_rounded)),
-                        SizedBox(height: 10),
-                        Text("Send"),
-                      ],
+                    const SizedBox(height: 20),
+                    Text(
+                      "Current Wallet Balance",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    Column(
-                      children: const [
-                        CircularIcon(
-                          icon: Icon(Icons.add_rounded),
-                          selected: true,
+                    const SizedBox(height: 8),
+                    Text(
+                      "\$3,293.46",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                    const SizedBox(height: 5),
+                    const MyDropDown(),
+                    const SizedBox(height: 20),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          children: [
+                            CircularIcon(icon: Icon(Icons.ios_share_rounded)),
+                            SizedBox(height: 10),
+                            Text("Send"),
+                          ],
                         ),
-                        SizedBox(height: 10),
-                        Text("Buy"),
+                        Column(
+                          children: [
+                            CircularIcon(
+                              icon: Icon(Icons.add_rounded),
+                              selected: true,
+                            ),
+                            SizedBox(height: 10),
+                            Text("Buy"),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            CircularIcon(icon: Icon(Icons.call_received_rounded)),
+                            SizedBox(height: 10),
+                            Text("Receive"),
+                          ],
+                        ),
                       ],
                     ),
-                    Column(
-                      children: const [
-                        CircularIcon(icon: Icon(Icons.call_received_rounded)),
-                        SizedBox(height: 10),
-                        Text("Receive"),
-                      ],
+                    const SizedBox(height: 10),
+                    const Divider(),
+                    const SizedBox(height: 10),
+                    const TokensHeadline(),
+                    SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                        itemCount: 10,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (_, __) => const TokenCard(),
+                      ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
-                const Divider(),
-                const SizedBox(height: 10),
-                const TokensHeadline(),
-                SizedBox(
-                  height: 200,
-                  child: ListView.builder(
-                    itemCount: 10,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (_, __) => const TokenCard(),
-                  ),
-                ),
-              ],
+                bottomNavigationBar: const MyBottomBar(),
+              ),
             ),
-            bottomNavigationBar: const MyBottomBar(),
           );
         },
       ),
@@ -215,7 +224,7 @@ class TokenCard extends StatelessWidget {
             leading: Image.asset("assets/images/bitcoin.png", width: 25),
             title: Text(
               "Bitcoin",
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
@@ -226,8 +235,8 @@ class TokenCard extends StatelessWidget {
                   child: SfCartesianChart(
                     margin: EdgeInsets.zero,
                     plotAreaBorderWidth: 0,
-                    primaryXAxis: CategoryAxis(isVisible: false),
-                    primaryYAxis: CategoryAxis(isVisible: false),
+                    primaryXAxis: const CategoryAxis(isVisible: false),
+                    primaryYAxis: const CategoryAxis(isVisible: false),
                     series: [
                       SplineSeries<int, int>(
                         width: 2,
@@ -244,7 +253,7 @@ class TokenCard extends StatelessWidget {
             ),
             subtitle: RichText(
               text: TextSpan(
-                style: Theme.of(context).textTheme.subtitle2,
+                style: Theme.of(context).textTheme.titleSmall,
                 children: [
                   TextSpan(
                     text: "+11%",
@@ -263,12 +272,12 @@ class TokenCard extends StatelessWidget {
               children: [
                 Text(
                   "\$45,875.89",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 const VerticalDivider(),
                 Text(
                   "-12.77(%20)",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -309,7 +318,7 @@ class _TimeFilterState extends State<TimeFilter> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Text(
               filters[i],
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
         ),
@@ -327,12 +336,12 @@ class TokensHeadline extends StatelessWidget {
       children: [
         Text(
           "Your Tokens",
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(width: 10),
         Text(
           "Swap",
-          style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.grey),
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
         ),
         const Spacer(),
         TextButton.icon(
@@ -343,7 +352,7 @@ class TokensHeadline extends StatelessWidget {
           ),
           icon: Text(
             "Sort",
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
         ),
       ],
