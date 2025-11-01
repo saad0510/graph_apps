@@ -7,10 +7,6 @@
 
 A simple set of beautiful graphs made with Flutter to showcase UI and animation skills.
 
-## Links
-
-* ⚡ Website : [Click Here](https://graph-ui-apps.web.app/)
-
 ## Screenshots
 
 ### Authentication Web
