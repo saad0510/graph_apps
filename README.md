@@ -1,6 +1,12 @@
-# Flutter Graph Websites
+<img src="https://raw.githubusercontent.com/saad0510/graph_apps/main/demos/cover.png" /> 
 
-graph-ui-apps.web.app
+# Graph UI
+
+A simple set of beautiful graphs made with Flutter to showcase UI and animation skills.
+
+## Links
+
+* ⚡ Website : [Click Here](https://graph-ui-apps.web.app/)
 
 ## Authentication Web
  
@@ -23,6 +29,4 @@ graph-ui-apps.web.app
 - https://dribbble.com/shots/16753965-Login-Sign-up-Dark-Mode-AW-Universal-Page
 - https://dribbble.com/shots/17463994-Crypto-Wallet-Shot-Dark-Version
 
-# Contact me
-- ayyansaad46@gmail.com
-- k200161@nu.edu.pk
+> saadbinkhalid.dev@gmail.com
