@@ -2,6 +2,9 @@
 
 # Graph UI
 
+[![Star this repo](https://img.shields.io/badge/Star-⭐_this_repo-FFEC86?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saad0510/graph_apps)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit-1077C7?style=for-the-badge&logo=rocket&logoColor=white)](https://graph-ui-apps.web.app/)
+
 A simple set of beautiful graphs made with Flutter to showcase UI and animation skills.
 
 ## Links
